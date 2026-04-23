@@ -1,0 +1,143 @@
+/* ---------------------------------------------------------------
+   Grievance System – Modern UI Theme
+   • Dark mode with subtle gradients
+   • Responsive layout
+   • Smooth hover & focus effects
+   --------------------------------------------------------------- */
+
+:root {
+  --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  --primary: hsl(210, 40%, 55%);
+  --primary-light: hsl(210, 40%, 65%);
+  --primary-dark: hsl(210, 40%, 45%);
+  --bg: hsl(210, 30%, 12%);
+  --bg-card: hsl(210, 30%, 18%);
+  --text: hsl(0, 0%, 90%);
+  --text-muted: hsl(0, 0%, 60%);
+  --border: hsl(210, 30%, 30%);
+  --radius: 8px;
+  --transition: 0.2s ease;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: hsl(210, 30%, 96%);
+    --bg-card: hsl(0, 0%, 100%);
+    --text: hsl(210, 15%, 20%);
+    --text-muted: hsl(210, 10%, 45%);
+    --border: hsl(210, 20%, 80%);
+  }
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family);
+  background: linear-gradient(135deg, var(--bg) 0%, hsl(210, 30%, 8%) 100%);
+  color: var(--text);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* Layout containers */
+#root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+}
+
+h2 {
+  margin: 0.5rem 0 1rem;
+  color: var(--primary-light);
+}
+
+/* Form styling */
+form {
+  background: var(--bg-card);
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+  max-width: 400px;
+}
+
+input, select, button {
+  font: inherit;
+  padding: 0.6rem 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg);
+  color: var(--text);
+  transition: var(--transition);
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px hsla(210, 40%, 55%, 0.2);
+}
+
+button {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+button:hover {
+  background: var(--primary-dark);
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+/* Grievance cards */
+.grievance-card {
+  background: var(--bg-card);
+  padding: 1rem;
+  border-radius: var(--radius);
+  margin: 0.5rem 0;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.grievance-card h3 {
+  margin: 0 0 0.5rem;
+  color: var(--primary-light);
+}
+
+.grievance-card p {
+  margin: 0.25rem 0;
+  color: var(--text-muted);
+}
+
+.grievance-card button {
+  margin-right: 0.5rem;
+  background: var(--primary);
+  padding: 0.4rem 0.8rem;
+  font-size: 0.9rem;
+}
+
+.grievance-card button:hover {
+  background: var(--primary-dark);
+}
+
+/* Utility */
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  form { max-width: 100%; }
+  .grievance-card { max-width: 100%; }
+}
